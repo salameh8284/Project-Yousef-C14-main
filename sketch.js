@@ -44,7 +44,8 @@ function draw() {
   }
   
   //moving bow
-  bow.y = World.mouseY
+  bow.y = World.mouseY;
+  //bow.x=World.mouseX;
   
   // release arrow when space key is pressed
   if (keyDown("space")) {
@@ -68,8 +69,8 @@ function draw() {
   
   if (arrowGroup.isTouching(redB)) {
     
-    //redB.destroyEach();
-    redB.destroy();
+    redB.destroyEach();
+    //redB.destroy();
     //redB.Each();
     //ballon.destroyEach();
     
@@ -138,9 +139,8 @@ function pinkBalloon() {
 
 // Creating  arrows for bow
  function createArrow() {
-  var arrow= createSprite(100, 100, 60, 10);
+  var arrow= createSprite(350, 100, 60, 10);
   arrow.addImage(arrowImage);
-  arrow.x = 360;
   arrow.y=bow.y;
   arrow.velocityX = -4;
   arrow.lifetime = 100;
